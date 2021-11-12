@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Scanner;
 
 public class Grades {
@@ -10,23 +12,32 @@ public class Grades {
         double percentage = read.nextDouble();
 
         if(percentage < 60){
-            System.out.println("Your grade is F");
+
+           grade ="F";
         }
 
         if(percentage >= 60){
-            System.out.println("Your grade is D");
+            if (percentage < 70){
+
+                System.out.println("your grade is d");
+            }
         }
 
         if(percentage >= 70){
-            System.out.println("Your grade is C");
+            if (percentage < 80) {
+                System.out.println("your grade is a c");
+            }
         }
 
         if(percentage >= 80){
-            System.out.println("Your grade is B");
+            if(percentage <90){
+                System.out.println("your grade is b");
+            }
         }
 
         if(percentage >= 90){
-            System.out.println("Your grade is A");
+            System.out.println("your grade is: " + grade);
         }
+
     }
 }

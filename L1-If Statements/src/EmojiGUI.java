@@ -1,3 +1,5 @@
+/*package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,6 +8,7 @@ import java.awt.event.ActionListener;
 public class EmojiGUI {
 
     //ADD BOOLEAN FLAG
+    boolean smiley = true;
 
     JPanel panel;
 
@@ -19,8 +22,8 @@ public class EmojiGUI {
         JButton smile = new JButton("Click to Smile");
         JButton frown = new JButton("Click to Frown");
 
-        smile.addActionListener(new SmileyListener());
-        frown.addActionListener(new FrowneyListener());
+       // smile.addActionListener(new SmileyListener());
+      //  frown.addActionListener(new FrowneyListener());
 
         panel.add(smile);
         panel.add(frown);
@@ -35,7 +38,7 @@ public class EmojiGUI {
             setBackground(Color.black);
         }
 
-        public void paintComponent(Graphics g){
+        public void paintComponent(Graphics g) {
 
             super.paintComponent(g);
 
@@ -49,37 +52,40 @@ public class EmojiGUI {
             Graphics2D g2 = (Graphics2D) g;
             g2.setStroke(new BasicStroke(10));
 
-            //If Statement to switch between Smile and Frown
+            If Statement to switch between Smile and Frown
+            if (smiley) {
+                g2.drawArc(100, 375, 175, 100, 180, 180);
+                //Smile
 
-            //Smile
-            g2.drawArc(100, 375, 175, 100, 180, 180);
 
-            //Frown
-            g2.drawArc(100, 400, 175, 100, 180, -180);
+                if (!smiley) {
+                    //Frown
+                    g2.drawArc(100, 400, 175, 100, 180, -180);
 
-        }
-    }
+                }
+            }
 
-    private class SmileyListener implements ActionListener{
+          class SmileyListener implements ActionListener {
 
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
+               @Override
+               public void actionPerformed(ActionEvent actionEvent) {
+                    //SET THE FLAG SMILE = TRUE
+                   smiley = true;
 
-            //SET THE FLAG SMILE = TRUE
+                    panel.repaint();
+                }
+            }
 
-            panel.repaint();
-        }
-    }
+            class FrowneyListener implements ActionListener {
 
-    private class FrowneyListener implements ActionListener{
+               @Override
+                public void actionPerformed(ActionEvent actionEvent) {
 
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
+                    //SET THE FLAG  SMILE = FALSE
+                    smiley = false;
 
-            //SET THE FLAG  SMILE = FALSE
+                   panel.repaint();
+                }
+            }
 
-            panel.repaint();
-        }
-    }
-
-}
+      }/*/
