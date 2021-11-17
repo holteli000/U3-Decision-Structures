@@ -12,32 +12,23 @@ public class Grades {
         double percentage = read.nextDouble();
 
         if(percentage < 60){
-
-           grade ="F";
+            System.out.println("Your grade is F");
         }
 
         if(percentage >= 60){
-            if (percentage < 70){
-
-                System.out.println("your grade is d");
-            }
+            System.out.println("Your grade is D");
         }
 
         if(percentage >= 70){
-            if (percentage < 80) {
-                System.out.println("your grade is a c");
-            }
+            System.out.println("Your grade is C");
         }
 
         if(percentage >= 80){
-            if(percentage <90){
-                System.out.println("your grade is b");
-            }
+            System.out.println("Your grade is B");
         }
 
         if(percentage >= 90){
-            System.out.println("your grade is: " + grade);
+            System.out.println("Your grade is A");
         }
-
     }
 }
